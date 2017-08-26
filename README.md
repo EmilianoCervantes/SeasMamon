@@ -69,7 +69,7 @@ curl http://localhost:3001/getBlockCount
 curl -H "Content-type:application/json" --data '{"peer" : "ws://{IP Local del Usuario}:6001"}' http://localhost:3001/addPeer
 ```
 
-### Conseguir el ultimo bloque agregado por un usuario
+#### Conseguir el ultimo bloque agregado por un usuario
 
 ```
 curl -H "Content-type:application/json" --data '{"id" : "{Hash identificador del cliente}"}' http://localhost:3001/getBlock```
