@@ -29,7 +29,7 @@ El codigo de blockchain presentado a continuación es una adaptación de [naivec
 * PHP 7.x
 * Nginx, XAMP, WAMP, Apache
 * Android 5.x
-* Conexión local a todos los dispositivos involucrados
+* IP de todos los dispositivos involucrados
 
 #### Como empezar
 (Para prubas locales)
