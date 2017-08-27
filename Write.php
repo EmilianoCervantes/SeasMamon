@@ -49,6 +49,20 @@ function ArmarBloque($data,$id){
     curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-type: application/json'));
     curl_setopt($ch, CURLOPT_POSTFIELDS, $bloque);
     $output = curl_exec($ch);
+    
+    
+    $bloques='{"to":"/topics/news","notification":{"body":"mensaje","title":"mensajote"}, data" : {"id":"'.$id.'","secret":"'.$output[0].'", "name":"Hospital 12"}}';
+    $urls = 'https://fcm.googleapis.com/fcm/send';
+    $chs = curl_init();
+    curl_setopt($chs, CURLOPT_URL, $urls);
+    curl_setopt($chs, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($chs, CURLOPT_POST, true);
+    curl_setopt($chs, CURLOPT_HTTPHEADER, array('Content-type: application/json','Authorization: key=AIzaSyA9tIjPIgI3MGlsI9bKLRlfNIUF9rDfRXA'));
+    curl_setopt($chs, CURLOPT_POSTFIELDS, $bloques);
+    $outputs = curl_exec($chs);
+    
+    file_put_contents("log.txt", var_dump($outputs));
+    
     // $bloque=$eliminado;
     
     $BlockFile='Block.json';
